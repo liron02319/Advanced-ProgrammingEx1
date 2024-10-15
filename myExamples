@@ -1,0 +1,59 @@
+hello: date >> file1 
+hello: cat file1
+Mon 19 Feb 2024 21:35:10 IST
+hello: cd mydir
+hello: ls
+colors.txt  file  file1  file2	file3
+hello: cat colors.txt
+blue
+black
+red
+red
+green
+blue
+green
+red
+red
+blue
+hello: sort colors.txt | uniq -c | sort -r | head -3
+      4 red
+      3 blue
+      2 green
+hello: echo $?
+0
+hello: cd ..
+hello: ls
+colors.txt  examples.txt  iftest    mydir	myfile	myshell    myshell.o
+example     file1	  Makefile  myExamples	mylog	myshell.c
+hello:  prompt = myprompt:
+myprompt: echo abc xyz
+abc xyz 
+myprompt: $person = David
+myprompt: echo person
+person 
+myprompt: echo $person
+David 
+myprompt: echo Enter a String
+Enter a String 
+myprompt: read name
+liron
+myprompt: echo $name
+liron 
+myprompt: if date | grep Mon
+then
+ echo "Shabat Shalom"
+else
+ echo "Hard way to go"
+fi
+"Shabat Shalom" 
+Mon 19 Feb 2024 21:40:50 IST
+myprompt: if date | grep Sun
+then
+ echo "Shabat Shalom"
+else
+ echo "Hard way to go"
+fi
+"Hard way to go" 
+myprompt: wc -l < colors.txt
+10
+
